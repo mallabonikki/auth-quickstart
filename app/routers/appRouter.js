@@ -35,7 +35,7 @@ var db = require('../../provider')
             function(err) {
               if (err) { return next(err); }
 
-                db.getUserPatient('mallabonikki').then(function(rows) { 
+                db.getUserPatient(user.username).then(function(rows) { 
                   console.log(rows)
                   res.render('patients', {rows: rows })
                 })
