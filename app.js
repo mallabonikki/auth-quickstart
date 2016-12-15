@@ -11,7 +11,7 @@ var express = require('express'),
     cookieParser = require('cookie-parser'),
     jsonParser = bodyParser.json()
 
-var port = process.env.PORT || 8080
+var port = process.env.PORT || 3000
 
 app.use(cookieParser())
 app.use(session({ secret: '4564f6s4fdsfdfd', resave: false, saveUninitialized: false }))

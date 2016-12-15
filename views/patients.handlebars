@@ -25,42 +25,32 @@
     </div>
     <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
       <h1 class="page-header">Patients Record</h1>
-
-      <h2 class="sub-header">Dr. {{ doctorsFirstname }} {{doctorsLastname}}'s Records</h2>
+      {{!--{{#rows}}--}}
+        <h2 class="sub-header"> Dr. {{rows.1.firstName}} {{rows.1.lastName}} - Patients </h2>
+      {{!--{{/rows}}--}}
       <div class="table-responsive">
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
-              <th>Header</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Address</th>
+              <th>Email</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>1,001</td>
-              <td>Lorem</td>
-              <td>ipsum</td>
-              <td>dolor</td>
-              <td>sit</td>
-            </tr>
-            <tr>
-              <td>1,002</td>
-              <td>amet</td>
-              <td>consectetur</td>
-              <td>adipiscing</td>
-              <td>elit</td>
-            </tr>
-            <tr>
-              <td>1,003</td>
-              <td>Integer</td>
-              <td>nec</td>
-              <td>odio</td>
-              <td>Praesent</td>
-            </tr>
+            {{#each rows}}
+              <tr>
+                <td> {{this.pFirstname}} </td>
+                <td> {{this.pLastname}} </td>
+                <td> {{this.pAge}} </td>
+                <td> {{this.pGender}} </td>
+                <td> {{this.pAddress}} </td>
+                <td> {{this.pEmail}} </td>
+              </tr>
+            {{/each}}
           </tbody>
         </table>
       </div>
