@@ -15,17 +15,19 @@ module.exports = function(express) {
   router.post('/signup', signupController.signup)
 
   router.post('/login', passport.authenticate('local', {
-      successRedirect: '/patients',
+      successRedirect: '/patients/',
       failureRedirect: '/',
       failureFlash: true 
-  }))
+      })
+  );
 
   router.get('/', function(req, res) {
     res.render('home')
   })
 
-  router.get('/patients', isAuthenticated, function(req, res) {
-    res.render('patients')
+  router.get('/patients/', isAuthenticated, function(req, res) {
+    // res.send(req.body.username)
+    res.render('patients', { doctorsFirstname: "Enrico", doctorsLastname: "Babaran"})
   })
 
   router.get('/logout', function(req, res) {
