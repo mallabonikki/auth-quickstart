@@ -21,6 +21,9 @@ var attributes = {
   lastName: {
     type: Sequelize.STRING,
   },
+  address: {
+    type: Sequelize.STRING,
+  },
   password: {
     type: Sequelize.STRING,
   },

@@ -7,6 +7,10 @@ module.exports.show = function(req, res) {
 
 module.exports.signup = function(req, res) {
   var username = req.body.username
+  var firstName = req.body.firstname
+  var lastName = req.body.lastname
+  var email = req.body.email
+  var address = req.body.address
   var password = req.body.password
   var password2 = req.body.password2
   
@@ -25,6 +29,10 @@ module.exports.signup = function(req, res) {
   
   var newUser = {
     username: username,
+    firstName: firstName,
+    lastName: lastName,
+    email: email,
+    address: address,
     salt: salt,
     password: hashedPassword
   }
